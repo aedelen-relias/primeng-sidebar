@@ -1,0 +1,35 @@
+<p-sidebar [(visible)]="sidebarVisible">
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center gap-2">
+            <p-avatar 
+                image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
+                shape="circle" />
+            <span class="font-bold">
+                Amy Elsner
+            </span>
+            <p-menu #profileMenu [popup]="true" [model]="items"></p-menu>
+            <button pButton type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text" (click)="toggleMenu($event)"></button>
+        </div>
+    </ng-template>
+    <ul class="list-none p-0 m-0">
+        <li class="mb-3">
+            <a href="#" class="text-base">
+                <i class="pi pi-home mr-2"></i>
+                Home
+            </a>
+        </li>
+        <li class="mb-3">
+            <a href="#" class="text-base">
+                <i class="pi pi-calendar mr-2"></i>
+                Calendar
+            </a>
+        </li>
+        <li class="mb-3">
+            <a href="#" class="text-base">
+                <i class="pi pi-cog mr-2"></i>
+                Settings
+            </a>
+        </li>
+    </ul>
+</p-sidebar>
+<p-button (onClick)="sidebarVisible = true" icon="pi pi-plus"></p-button>
